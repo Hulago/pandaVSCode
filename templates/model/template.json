@@ -1,0 +1,6 @@
+{
+  "label": "model",
+  "description": "model file",
+  "detail": "Class model extended from BaseModel",
+  "variables": ["name"]
+}

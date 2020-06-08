@@ -1,0 +1,9 @@
+{
+  "PKAvatar from ProzisKit": {
+    "prefix": "!Ava",
+    "body": [
+      "<PKAvatar :avatar='avatar' :name='name' :size='size' :color='color' :qaLabel='qaLabel' />"
+    ],
+    "description": "This is the implementation of PKAvatar component"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "name": "hrextension",
+  "displayName": "HRExtension",
+  "description": "personal extension",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.45.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.i.prozis.tech/v-prozis/prz-tools.git"
+  },
+  "icon": "images/icon.png",
+  "categories": [
+    "Other",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onCommand:hrextension.camelCase",
+    "onCommand:hrextension.template"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Blueprint Configuration",
+      "properties": {
+        "hrextension.templatesPath": {
+          "type": [
+            "array"
+          ],
+          "default": [
+            "./templates"
+          ],
+          "description": "Where your templates are stored relative to your workspace root path. Defaults to a folder named 'templates' in the root of your project."
+        }
+      }
+    },
+    "snippets": [{
+      "language": "vue-html",
+      "path": "./src/snippets/vue-html.json"
+    }],
+    "commands": [{
+        "command": "hrextension.camelCase",
+        "title": "Transform to camelCase"
+      },
+      {
+        "command": "hrextension.template",
+        "title": "Create from template"
+      }
+    ],
+    "menus": {
+      "explorer/context": [{
+        "key": "cmd+a+p",
+        "when": "filesExplorerFocus",
+        "command": "hrextension.template",
+        "group": "3_workspace@500"
+      }]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/lodash-es": "^4.17.3",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.0",
+    "@types/vscode": "^1.45.0",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "eslint": "^6.8.0",
+    "glob": "^7.1.6",
+    "mocha": "^7.1.2",
+    "typescript": "^3.8.3",
+    "vscode-test": "^1.3.0"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.15"
+  }
+}
