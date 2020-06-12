@@ -36,11 +36,14 @@
         }
       }
     },
-    "snippets": [{
-      "language": "vue-html",
-      "path": "./src/snippets/vue-html.json"
-    }],
-    "commands": [{
+    "snippets": [
+      {
+        "language": "vue-html",
+        "path": "./src/snippets/vue-html.json"
+      }
+    ],
+    "commands": [
+      {
         "command": "hrextension.camelCase",
         "title": "Transform to camelCase"
       },
@@ -50,12 +53,14 @@
       }
     ],
     "menus": {
-      "explorer/context": [{
-        "key": "cmd+a+p",
-        "when": "filesExplorerFocus",
-        "command": "hrextension.template",
-        "group": "3_workspace@500"
-      }]
+      "explorer/context": [
+        {
+          "key": "cmd+a+p",
+          "when": "filesExplorerFocus",
+          "command": "hrextension.template",
+          "group": "3_workspace@500"
+        }
+      ]
     }
   },
   "scripts": {
@@ -81,6 +86,7 @@
     "vscode-test": "^1.3.0"
   },
   "dependencies": {
+    "fs-extra": "^9.0.1",
     "lodash-es": "^4.17.15"
   }
 }

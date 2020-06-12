@@ -1,11 +1,11 @@
 import { BaseModel, endpoint, prop } from '@prz/services';
 
-@endpoint('${_.snakeCase(name)}')
-export class ${_.PascalCase(name)}Model extends BaseModel {
+@endpoint('${_.kebabCase(name)}')
+export class ${_.pascalCase(name)}Model extends BaseModel {
   @prop()
   id: number;
 
-  constructor(data?: Partial<${_.PascalCase(name)}Model>) {
+  constructor(data?: Partial<${_.pascalCase(name)}Model>) {
     super(data);
   }
 }
