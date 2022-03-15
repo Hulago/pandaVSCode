@@ -87,6 +87,6 @@
   },
   "dependencies": {
     "fs-extra": "^9.0.1",
-    "lodash-es": "^4.17.15"
+    "lodash-es": "^4.17.21"
   }
 }
